@@ -1,0 +1,109 @@
+/* General Layout */
+.settings-page {
+  display: flex;
+  min-height: 100vh;
+}
+
+.settings-sidebar {
+  width: 250px;
+  background: var(--menu-bg);
+  color: var(--text-color);
+  padding: 1rem;
+}
+
+.settings-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.settings-menu li {
+  margin-bottom: 1rem;
+}
+
+.settings-menu a {
+  text-decoration: none;
+  color: var(--text-color);
+  display: block;
+  padding: 0.5rem;
+  background: var(--button-bg);
+  border-radius: 5px;
+  text-align: cente
+}
+
+/* Header Box Styling */
+.settings-content h2 {
+  background: var(--header-bg); /* Use the header background variable */
+  color: var(--text-color); /* Text color based on the current theme */
+  padding: .5rem; /* Add spacing inside the box */
+  border-radius: 10px; /* Rounded corners */
+  text-align: center; /* Center-align the text */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  margin-bottom: 1rem; /* Add space below the header box */
+}
+
+/* Adjust for light mode */
+body.light-mode .settings-content h2 {
+  background: var(--menu-bg); /* Lighter background for light mode */
+  color: var(--text-color); /* Contrast text color for light mode */
+}
+
+
+.settings-menu a:hover {
+  background: var(--button-hover);
+  color: var(--bg-color);
+}
+
+main {
+  flex-grow: 1;
+  padding: 2rem;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+.settings-content {
+  display: none;
+}
+
+.settings-content:not(.hidden) {
+  display: block;
+}
+
+button {
+  background: var(--button-bg);
+  color: var(--text-color);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--button-hover);
+  color: var(--bg-color);
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--menu-bg);
+  color: var(--text-color);
+}
+
+/* Light and Dark Mode Variables */
+:root {
+  --bg-color: #212121; /* Dark Mode */
+  --text-color: #9dd8d8;
+  --header-bg: #344850;
+  --menu-bg: #3a4042;
+  --button-bg: #464e51;
+  --button-hover: #8ecccc;
+}
+
+body.light-mode {
+  --bg-color: #fafafa; /* Light Mode */
+  --text-color: #484b6a;
+  --header-bg: #e4e5f1;
+  --menu-bg: #d2d3db;
+  --button-bg: #e4e5f1;
+  --button-hover: #9394a5;
+}
