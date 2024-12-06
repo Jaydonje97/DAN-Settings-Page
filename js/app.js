@@ -1,36 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Theme Toggle
-  const themeToggleButton = document.getElementById('toggle-theme');
-  const currentTheme = localStorage.getItem('theme') || 'dark';
+  // Theme Switch Button Logic
+  const themeBtn = document.getElementById('toggle-theme');
+  const storedTheme = localStorage.getItem('theme') || 'dark';
 
-  // Apply saved theme
-  document.body.classList.toggle('light-mode', currentTheme === 'light');
-  themeToggleButton.textContent = currentTheme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+  // Set initial theme based on saved preference
+  document.body.classList.toggle('light-mode', storedTheme === 'light');
+  themeBtn.textContent = storedTheme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode';
 
-  themeToggleButton.addEventListener('click', () => {
-    const isLightMode = document.body.classList.toggle('light-mode');
-    localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
-    themeToggleButton.textContent = isLightMode ? 'Switch to Dark Mode' : 'Switch to Light Mode';
+  // Toggle theme and save preference
+  themeBtn.addEventListener('click', () => {
+    const lightModeActive = document.body.classList.toggle('light-mode');
+    localStorage.setItem('theme', lightModeActive ? 'light' : 'dark');
+    themeBtn.textContent = lightModeActive ? 'Switch to Dark Mode' : 'Switch to Light Mode';
   });
 
-  // Sidebar Section Switching
-  const menuLinks = document.querySelectorAll('.settings-menu a');
+  // Sidebar Navigation Logic
+  const navLinks = document.querySelectorAll('.settings-menu a');
   const sections = document.querySelectorAll('.settings-content');
 
-  menuLinks.forEach(link => {
+  navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
-      e.preventDefault();
+      e.preventDefault(); // Prevent default anchor behavior
 
-      const targetSection = link.getAttribute('data-section');
+      const sectionId = link.getAttribute('data-section'); // Target section ID
 
-      sections.forEach(section => {
-        section.classList.add('hidden');
-      });
+      // Hide all sections
+      sections.forEach(section => section.classList.add('hidden'));
 
-      const activeSection = document.getElementById(targetSection);
-      if (activeSection) activeSection.classList.remove('hidden');
+      // Show the clicked section
+      const targetSection = document.getElementById(sectionId);
+      if (targetSection) targetSection.classList.remove('hidden');
     });
   });
 });
-
 
