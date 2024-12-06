@@ -1,97 +1,100 @@
-/* General Layout */
+/* Page Layout */
 .settings-page {
   display: flex;
-  min-height: 100vh;
+  min-height: 100vh; /* Full viewport height */
 }
 
 .settings-sidebar {
-  width: 250px;
+  width: 250px; /* Fixed width for sidebar */
   background: var(--menu-bg);
   color: var(--text-color);
-  padding: 1rem;
+  padding: 1rem; /* Spacing inside the sidebar */
 }
 
 .settings-menu ul {
-  list-style: none;
+  list-style: none; /* Remove bullet points */
   padding: 0;
 }
 
 .settings-menu li {
-  margin-bottom: 1rem;
+  margin-bottom: 1rem; /* Space between menu items */
 }
 
 .settings-menu a {
-  text-decoration: none;
+  text-decoration: none; /* No underline */
   color: var(--text-color);
-  display: block;
-  padding: 0.5rem;
+  display: block; /* Make links fill their container */
+  padding: 0.5rem; /* Space inside links */
   background: var(--button-bg);
-  border-radius: 5px;
-  text-align: cente
+  border-radius: 5px; /* Rounded corners for links */
+  text-align: center; /* Center the link text */
 }
 
-/* Header Box Styling */
+/* Header Styling */
 .settings-content h2 {
-  background: var(--header-bg); /* Use the header background variable */
-  color: var(--text-color); /* Text color based on the current theme */
-  padding: .5rem; /* Add spacing inside the box */
-  border-radius: 10px; /* Rounded corners */
-  text-align: center; /* Center-align the text */
+  background: var(--header-bg); /* Background color for header */
+  color: var(--text-color); /* Text color for header */
+  padding: 0.5rem; /* Space inside header box */
+  border-radius: 10px; /* Rounded header box corners */
+  text-align: center; /* Center-align header text */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-  margin-bottom: 1rem; /* Add space below the header box */
+  margin-bottom: 1rem; /* Space below header */
 }
 
-/* Adjust for light mode */
+/* Light Mode Adjustments */
 body.light-mode .settings-content h2 {
-  background: var(--menu-bg); /* Lighter background for light mode */
-  color: var(--text-color); /* Contrast text color for light mode */
+  background: var(--menu-bg); /* Adjust header background for light mode */
+  color: var(--text-color); /* Ensure good contrast */
 }
-
 
 .settings-menu a:hover {
-  background: var(--button-hover);
+  background: var(--button-hover); /* Highlight menu item on hover */
   color: var(--bg-color);
 }
 
+/* Main Content Area */
 main {
-  flex-grow: 1;
-  padding: 2rem;
+  flex-grow: 1; /* Expand to fill remaining space */
+  padding: 2rem; /* Space inside main content */
   background: var(--bg-color);
   color: var(--text-color);
 }
 
 .settings-content {
-  display: none;
+  display: none; /* Hide sections by default */
 }
 
 .settings-content:not(.hidden) {
-  display: block;
+  display: block; /* Show active section */
 }
 
+/* Button Styles */
 button {
   background: var(--button-bg);
   color: var(--text-color);
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
+  border: none; /* No button border */
+  padding: 0.5rem 1rem; /* Button padding */
+  border-radius: 5px; /* Rounded button corners */
+  cursor: pointer; /* Pointer cursor for buttons */
 }
 
 button:hover {
-  background: var(--button-hover);
+  background: var(--button-hover); /* Change button background on hover */
   color: var(--bg-color);
 }
 
+/* Footer Styling */
 footer {
-  text-align: center;
-  padding: 1rem;
+  text-align: center; /* Center-align footer text */
+  padding: 1rem; /* Space inside footer */
   background: var(--menu-bg);
   color: var(--text-color);
 }
 
-/* Light and Dark Mode Variables */
+/* Theme Variables */
 :root {
-  --bg-color: #212121; /* Dark Mode */
+  /* Dark Mode Colors */
+  --bg-color: #212121;
   --text-color: #9dd8d8;
   --header-bg: #344850;
   --menu-bg: #3a4042;
@@ -100,10 +103,12 @@ footer {
 }
 
 body.light-mode {
-  --bg-color: #fafafa; /* Light Mode */
+  /* Light Mode Colors */
+  --bg-color: #fafafa;
   --text-color: #484b6a;
   --header-bg: #e4e5f1;
   --menu-bg: #d2d3db;
   --button-bg: #e4e5f1;
   --button-hover: #9394a5;
 }
+
